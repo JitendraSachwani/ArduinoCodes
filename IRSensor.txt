@@ -1,0 +1,35 @@
+
+int templs=11;
+int temprs=2;
+void setup()
+{
+  Serial.begin(9600);
+pinMode(templs,INPUT);
+pinMode(temprs,INPUT);
+}
+void loop()
+{
+  templs = digitalRead(templs);
+ temprs = digitalRead(temprs);
+if(templs==1&&temprs==1){
+  Serial.print("forward");
+  Serial.print (templs);
+  Serial.println(" ");}
+
+if(templs==0&&temprs==0){
+  Serial.print("stop");
+  Serial.print (templs);
+  Serial.println(" ");}
+
+if(templs==0&&temprs==1){
+  Serial.print("left");
+  Serial.print (templs);
+  Serial.println(" ");}
+
+
+if(templs==1&&temprs==0){
+  Serial.print("right");
+  Serial.print (templs);
+  Serial.println(" ");}
+
+  }
